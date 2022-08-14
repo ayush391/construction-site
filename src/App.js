@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-
+import const_logo from './Assets/const_logo.jpg'
+import banner from './Assets/back_banner.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <div className=' header '>
+        <br/>
+									<img src={const_logo} className="logo_image" alt="Const Site IMG" />
+
+								
+									<h2 className='heading'>Construction Site</h2>
+                <br/>
+                
+								</div>
+
     </div>
   );
 }
