@@ -3,11 +3,15 @@ import './App.css';
 import const_logo from './Assets/const_logo.jpg'
 import banner from './Assets/back_banner.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import { Routes,Route } from 'react-router-dom';
+import Freelance from './SubChild/freelance'
+import E_shop from './SubChild/eShop'
 import Card_layout from './Components/Card';
+import Home from './SubChild/Home';
 function App() {
   return (
     <div className="App">
+      
       
       <div className=' header '>
         <br/>
@@ -19,7 +23,11 @@ function App() {
                 
 								</div>
 
-        <Card_layout/>
+                <Routes>
+        <Route path='/freelance' element={<Freelance/>}/>
+        <Route path='/eshop' element={<E_shop/>}/>
+        <Route path='/' element={<Home/>}/>
+      </Routes>
 
     </div>
   );

@@ -4,6 +4,7 @@ import freelance_img from '../Assets/freelance.jpg'
 import online_img from '../Assets/online.jpg'
 import Card from 'react-bootstrap/esm/Card'
 import ListGroup from 'react-bootstrap/esm/ListGroup'
+import Button from 'react-bootstrap/Button';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -24,7 +25,7 @@ const Card_layout = ()=>{
         <ListGroup.Item>Reasonable rates</ListGroup.Item>
         <ListGroup.Item>Guranteed results</ListGroup.Item>
       </ListGroup>
-      
+      <Button variant="primary"><a href='/freelance' style={{color:'#fff'}}>Find Architect</a></Button>
     </Card>
     <Card style={{ width: '20%' ,padding:"1%" ,marginLeft:"2s%"}}>
       <Card.Img variant="top" src={online_img} />
@@ -39,7 +40,7 @@ const Card_layout = ()=>{
         <ListGroup.Item>Genuine rates</ListGroup.Item>
         <ListGroup.Item>A one Quality</ListGroup.Item>
       </ListGroup>
-      
+      <Button variant="primary" ><a href='/eshop' style={{color:'#fff'}}>Shop online</a></Button>
     </Card>
        </div>
        
