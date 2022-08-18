@@ -16,6 +16,7 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDIXJ5YT7hoNbBFqK3TBcV41-TzIO-7n7w",
   authDomain: "fir-auth-6edd8.firebaseapp.com",
@@ -25,10 +26,13 @@ const firebaseConfig = {
   appId: "1:904760319835:web:44fd0d957f114b4e51447e",
   measurementId: "G-Q4TYKH9GG7",
 };
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
 const googleProvider = new GoogleAuthProvider();
+
 const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
@@ -48,6 +52,7 @@ const signInWithGoogle = async () => {
     alert(err.message);
   }
 };
+
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -56,6 +61,7 @@ const logInWithEmailAndPassword = async (email, password) => {
     alert(err.message);
   }
 };
+
 const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -71,6 +77,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     alert(err.message);
   }
 };
+
 const sendPasswordReset = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -80,10 +87,13 @@ const sendPasswordReset = async (email) => {
     alert(err.message);
   }
 };
+
 const logout = () => {
   signOut(auth);
 };
+
 export {
+  app,
   auth,
   db,
   signInWithGoogle,
@@ -92,3 +102,4 @@ export {
   sendPasswordReset,
   logout,
 };
+export default app;
