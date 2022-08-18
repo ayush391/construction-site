@@ -12,7 +12,7 @@ import Home from './SubChild/Home';
 import Navbar from './Components/Navbar'
 import CardButton from './Components/CardButton'
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import Reset from "./Reset";
