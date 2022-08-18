@@ -12,6 +12,12 @@ import Home from './SubChild/Home';
 import Navbar from './Components/Navbar'
 import CardButton from './Components/CardButton'
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
+import Reset from "./Reset";
+import Dashboard from "./Dashboard";
+
 function App() {
   return (
     <div className="App">
@@ -34,6 +40,11 @@ function App() {
         <Route path='/freelance' element={<Freelance />} />
         <Route path='/eshop' element={<E_shop />} />
         <Route path='/' element={<Home />} />
+
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/reset" element={<Reset />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
       </Routes>
 
     </div>
