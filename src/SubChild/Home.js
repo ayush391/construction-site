@@ -1,10 +1,14 @@
 import React from "react";
-import Card_layout from "../Components/Card";
+import CardLayout from "../Components/Card";
+import CardButton from '../Components/CardButton'
 
 const Home =()=>{
     return(
         <div>
-            <Card_layout/>
+            {/* <CardLayout/> */}
+            <CardButton></CardButton>
+            {/* <CardButton></CardButton> */}
+
         </div>
     )
 }
