@@ -18,10 +18,29 @@ import Register from "./Register";
 import Reset from "./Reset";
 import Dashboard from "./Dashboard";
 
+
+import { createTheme } from '@mui/material/styles';
+import { green, purple } from '@mui/material/colors';
+import { ThemeProvider } from '@emotion/react';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main:'#2e3440',
+    },
+    secondary: {
+      main: '#4c566a',
+    },
+  },
+});
+
+
 function App() {
   return (
     <div className="App">
 
+    <ThemeProvider theme={theme}>
 
       <div className='header'>
         <Navbar></Navbar>
@@ -46,6 +65,7 @@ function App() {
         <Route exact path="/reset" element={<Reset />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
       </Routes>
+    </ThemeProvider>
 
     </div>
   );

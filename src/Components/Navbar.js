@@ -15,6 +15,10 @@ import AdbIcon from '@mui/icons-material/Adb';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import { Link } from 'react-router-dom';
 
+
+
+
+
 const pages = {'Shop':'/eshop', 'Hire':'/freelance'};
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
