@@ -9,11 +9,13 @@ const images = [
     url: 'https://images.unsplash.com/photo-1516216628859-9bccecab13ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
     title: 'Hire A Professional',
     width: '100%',
+    link: '/freelance'
   },
   {
     url: 'https://images.unsplash.com/photo-1559322575-2f4e66131d55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     title: 'Shop For Material',
     width: '100%',
+    link : '/eshop'
   },
   
 ];
@@ -91,9 +93,9 @@ export default function ButtonBases() {
           key={image.title}
           style={{
             width: image.width,
-
-          }}
-        >
+          
+          }} 
+        ><a href={image.link}>
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
           <Image>
@@ -112,6 +114,7 @@ export default function ButtonBases() {
               <ImageMarked className="MuiImageMarked-root" />
             </Typography>
           </Image>
+          </a>
         </ImageButton>
       ))}
     </Box>
