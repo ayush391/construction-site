@@ -1,31 +1,18 @@
-/* .header{
-  background-image: url('./Assets/banner.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  margin: 20px;
-  padding-bottom: 10%;
+.header{
+  /* margin-bottom: 15vh; */
 }
 
-.logo_image{
-  width:15%;
+.main-body{
+  margin-top: 15vh;
 
-  margin-right:5%;
-  margin-left: 2%;
-  text-align:right;
-  float: left;
-
-  
 }
-.heading{
-  
-  width:65%;
-  font-size: xx-large;
-  margin-left:5%;
-  margin-right:8%;
-  text-align: left;
 
-  float:  right;
+a:hover{
+  color: inherit!important;;
+  text-decoration: none!important;
+}
 
-} */
+a{
+  color: inherit!important;;
+  text-decoration: none!important;
+}

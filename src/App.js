@@ -12,10 +12,35 @@ import Home from './SubChild/Home';
 import Navbar from './Components/Navbar'
 import CardButton from './Components/CardButton'
 
+import { BrowserRouter as Router} from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
+import Reset from "./Reset";
+import Dashboard from "./Dashboard";
+
+
+import { createTheme } from '@mui/material/styles';
+import { green, purple } from '@mui/material/colors';
+import { ThemeProvider } from '@emotion/react';
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main:'#2e3440',
+    },
+    secondary: {
+      main: '#4c566a',
+    },
+  },
+});
+
+
 function App() {
   return (
     <div className="App">
 
+    <ThemeProvider theme={theme}>
 
       <div className='header'>
         <Navbar></Navbar>
@@ -30,11 +55,17 @@ function App() {
 
       </div>
 
-      <Routes>
+      <Routes >
         <Route path='/freelance' element={<Freelance />} />
         <Route path='/eshop' element={<E_shop />} />
         <Route path='/' element={<Home />} />
+
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/reset" element={<Reset />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
       </Routes>
+    </ThemeProvider>
 
     </div>
   );

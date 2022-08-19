@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
+import Link from '@mui/material/Button'
 import Typography from '@mui/material/Typography';
 
 const images = [
@@ -9,20 +10,27 @@ const images = [
     url: 'https://images.unsplash.com/photo-1516216628859-9bccecab13ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80',
     title: 'Hire A Professional',
     width: '100%',
+
     link: '/freelance'
+
   },
   {
     url: 'https://images.unsplash.com/photo-1559322575-2f4e66131d55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     title: 'Shop For Material',
     width: '100%',
+
+   
+
+
     link : '/eshop'
+
   },
   
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
-  height: 410,
+  height: 440,
   [theme.breakpoints.down('xs')]: {
     width: '100% !important', // Overrides inline-style
     height: 100,
@@ -90,6 +98,7 @@ export default function ButtonBases() {
       {images.map((image) => (
         <ImageButton
           focusRipple
+          href={image.href}
           key={image.title}
           style={{
             width: image.width,
