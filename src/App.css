@@ -6,3 +6,13 @@
   margin-top: 15vh;
 
 }
+
+a:hover{
+  color: inherit!important;;
+  text-decoration: none!important;
+}
+
+a{
+  color: inherit!important;;
+  text-decoration: none!important;
+}
