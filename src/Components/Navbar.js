@@ -54,6 +54,10 @@ const Navbar = () => {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              "&:hover":{
+                color: "inherit",
+                textDecoration: 'none'
+              }
             }}
           >
             Construction Site
@@ -110,6 +114,10 @@ const Navbar = () => {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              "&:hover":{
+                color: "inherit",
+                textDecoration: 'none'
+              }
             }}
           >
             Construction Site
