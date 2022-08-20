@@ -1,77 +1,38 @@
 import { Container } from "@mui/system";
 import Grid from '@mui/material/Grid'; // Grid version 1
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ItemCard from "../Components/ItemCard";
+
+import app from "../firebase";
+import {getDatabase , ref , onValue} from 'firebase/database'
+
+
+
 
 
 const E_shop = () => {
+
+
+    const [todos , setTodos] = useState([])
+    const db = getDatabase(app)
+    const reference = ref(db ,"Products/")
+    const temp = []
+    useEffect(()=>{
+        onValue(reference,(snapshot)=>{
+            snapshot.forEach((childSnapshot)=>{
+                temp.push([childSnapshot.key , childSnapshot.val().Price , childSnapshot.val().description , childSnapshot.val().imageLink])
+            })
+            console.log(temp)
+            setTodos(temp)
+        })
+    })
     return (
         <div className='main-body'>
             <Container  >
-                <Grid container display="flex" justifyContent="center"  rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Ultratech Cement 5kg" price={500} img="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                    <Grid item  lg={4}>
-                        <ItemCard title="Sariya" price={200} img="https://5.imimg.com/data5/SELLER/Default/2021/5/CV/SV/WT/100717359/kamdhenu-tmt-bar-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Wall Putty" price={600} img="https://5.imimg.com/data5/UR/UF/MY-25242944/acrylic-wall-putty-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Ultratech Cement 5kg" price={500} img="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                    <Grid item  lg={4}>
-                        <ItemCard title="Sariya" price={200} img="https://5.imimg.com/data5/SELLER/Default/2021/5/CV/SV/WT/100717359/kamdhenu-tmt-bar-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Wall Putty" price={600} img="https://5.imimg.com/data5/UR/UF/MY-25242944/acrylic-wall-putty-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Ultratech Cement 5kg" price={500} img="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                    <Grid item  lg={4}>
-                        <ItemCard title="Sariya" price={200} img="https://5.imimg.com/data5/SELLER/Default/2021/5/CV/SV/WT/100717359/kamdhenu-tmt-bar-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Wall Putty" price={600} img="https://5.imimg.com/data5/UR/UF/MY-25242944/acrylic-wall-putty-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Ultratech Cement 5kg" price={500} img="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                    <Grid item  lg={4}>
-                        <ItemCard title="Sariya" price={200} img="https://5.imimg.com/data5/SELLER/Default/2021/5/CV/SV/WT/100717359/kamdhenu-tmt-bar-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Wall Putty" price={600} img="https://5.imimg.com/data5/UR/UF/MY-25242944/acrylic-wall-putty-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Ultratech Cement 5kg" price={500} img="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                    <Grid item  lg={4}>
-                        <ItemCard title="Sariya" price={200} img="https://5.imimg.com/data5/SELLER/Default/2021/5/CV/SV/WT/100717359/kamdhenu-tmt-bar-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Wall Putty" price={600} img="https://5.imimg.com/data5/UR/UF/MY-25242944/acrylic-wall-putty-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Ultratech Cement 5kg" price={500} img="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                    <Grid item  lg={4}>
-                        <ItemCard title="Sariya" price={200} img="https://5.imimg.com/data5/SELLER/Default/2021/5/CV/SV/WT/100717359/kamdhenu-tmt-bar-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    <Grid item  lg={4}>
-                        <ItemCard title="Wall Putty" price={600} img="https://5.imimg.com/data5/UR/UF/MY-25242944/acrylic-wall-putty-500x500.jpg" description="this is a very long description of this item"></ItemCard>
-                    </Grid>
-                    
-                </Grid>
+                {todos.map((todo)=>(
+                    <ItemCard title={todo[0]} price = {todo[1]} description = {todo[2]} img = {todo[3]}/>
+                ))}
             </Container >
         </div>
     )
