@@ -10,7 +10,7 @@ const Freelance = () => {
     return (
         <div className='main-body'>
             <Container  >
-                <Grid container display="flex" justifyContent="center"  rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid container display="flex" justifyContent="center"  rowSpacing={6} columnSpacing={{ xs: 1, sm: 3, md: 5 }}>
                     <Grid item  lg={4}>
                         <PersonCard title="Samantha Miles" rating={4.2} price={500} img="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" description="this is a very long description of this item"></PersonCard>
                     </Grid>

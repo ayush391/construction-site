@@ -9,22 +9,28 @@ import StarIcon from '@mui/icons-material/Star';
 
 export default function Person(props) {
     return (
-        <Card variant='outlined' sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 340, minWidth: 300, backgroundColor:'#e6e6e9'  }}>
             <CardActionArea>
                 <CardMedia
+                align='center'
                     component="img"
-                    height="200"
+                    height="330"
                     //   image="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg"
                     image={props.img}
                     alt={props.title + " image"}
+                    sx={{
+                        // width:300,
+                        borderRadius:100,
+                        padding:2,
+                    }}
                 />
                 <CardContent>
-                    <Typography variant="h5" align='left' component="div">
+                    <Typography variant="h5" align='center' component="div" sx={{fontWeight:'600'}}>
                         {/* Ultratech Cement 5 kg */}
                         {props.title}
                     </Typography>
 
-                    <Typography gutterBottom variant="body2" align='left' color="text.secondary">
+                    <Typography gutterBottom variant="body2" align='center' color="text.secondary">
                         {/* UltraTech Cement Limited is an Indian cement company based in Mumbai, and a part of Aditya Birla Group. UltraTech is the largest manufacturer of grey cement, ready-mix concrete and white cement in India with an installed capacity of 116.75 million tonnes per annum. */}
                         {props.description}
                     </Typography>
@@ -43,7 +49,7 @@ export default function Person(props) {
                             Starting at<span> </span>
                             <Typography variant="h6" color='red' display='inline-block'>
                                 {/* Rs.400 */}
-                                Rs.{props.price}
+                                Rs.{props.price}/hour
                             </Typography>
                         </Typography>
                     </div>
