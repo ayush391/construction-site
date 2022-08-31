@@ -7,11 +7,12 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 export default function ItemCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 340 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="200"
+          width='200'
         //   image="https://5.imimg.com/data5/UG/LM/IN/SELLER-61231887/ultratech-cement-500x500.jpg"
           image={props.img}
           alt={props.title+ " image"}
@@ -32,11 +33,12 @@ export default function ItemCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      {/* <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions> */}
+      <CardActions sx={{ justifyContent: 'center' }}>
+                <Button size="small" color="primary"  variant='contained' sx={{ width: '50%', height: '3rem', fontWeight: '600' }}>
+                    Buy
+                </Button>
+                
+            </CardActions>
     </Card>
   );
 }

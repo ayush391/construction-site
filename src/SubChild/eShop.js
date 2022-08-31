@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import ItemCard from "../Components/ItemCard";
 
 import app from "../firebase";
-import {getDatabase , ref , onValue} from 'firebase/database'
+import { getDatabase, ref, onValue } from 'firebase/database'
 
 
 
@@ -14,14 +14,14 @@ import {getDatabase , ref , onValue} from 'firebase/database'
 const E_shop = () => {
 
 
-    const [todos , setTodos] = useState([])
+    const [todos, setTodos] = useState([])
     const db = getDatabase(app)
-    const reference = ref(db ,"Products/")
+    const reference = ref(db, "Products/")
     const temp = []
-    useEffect(()=>{
-        onValue(reference,(snapshot)=>{
-            snapshot.forEach((childSnapshot)=>{
-                temp.push([childSnapshot.key , childSnapshot.val().Price , childSnapshot.val().description , childSnapshot.val().imageLink])
+    useEffect(() => {
+        onValue(reference, (snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+                temp.push([childSnapshot.key, childSnapshot.val().Price, childSnapshot.val().description, childSnapshot.val().imageLink])
             })
             console.log(temp)
             setTodos(temp)
@@ -29,11 +29,18 @@ const E_shop = () => {
     })
     return (
         <div className='main-body'>
-            <Container  >
-                {todos.map((todo)=>(
-                    <ItemCard title={todo[0]} price = {todo[1]} description = {todo[2]} img = {todo[3]}/>
-                ))}
-            </Container >
+
+            <Container>
+                <Grid container display="flex" justifyContent="center" rowSpacing={6} columnSpacing={{ xs: 1, sm: 3, md: 5 }}>
+
+                    {todos.map((todo) => (
+                        <Grid item lg={4}>
+                            <ItemCard title={todo[0]} price={todo[1]} description={todo[2]} img={todo[3]} />
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+
         </div>
     )
 }
